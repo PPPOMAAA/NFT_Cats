@@ -87,6 +87,28 @@ header {
     color: #FCFCFD;
 }
 
+.shine {
+    z-index: 1;
+    position: relative;
+}
+
+.shine::after {
+    content: '';
+    z-index: -1;
+    background-color: hsla(0, 0%, 100%, 0.3);
+    position: absolute;
+    top: -50%;
+    bottom: -50%;
+    width: 3em;
+    transform: translate3d(-350%, 0, 0) rotate(35deg);
+}
+
+.shine:hover::after {
+    transition: transform 0.45s ease-in-out;
+    transform: translate3d(200%, 0, 0) rotate(35deg);
+}
+
+
 .header_upload {
     margin-right: 12px;
 }
