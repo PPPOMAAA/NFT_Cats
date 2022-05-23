@@ -150,15 +150,29 @@ form {
     background: none;
     border: 3px solid #E6E8EC;
     outline-color: #3772FF;
-    border-radius: 8px;
-    font-size: 14px;
+    border-radius: 15px;
+    font-size: 15px;
     line-height: 1.66667;
     transition: border-color .2s;
     margin: 0 0 20px;
 }
 
+.other_auth {
+    margin: 0 0 15px;
+    color: #777E90;
+    font-size: 15px;
+    text-decoration: underline;
+    transition: color .1s;
+}
+
+.other_auth:hover {
+    color: #3772FF;
+}
+
 .index-main {
-    padding-top: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main {
@@ -167,8 +181,10 @@ form {
 
 .main_head {
     max-width: 700px;
-    margin: 0 auto 128px;
     text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .main_stage {
