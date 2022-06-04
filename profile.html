@@ -1,41 +1,37 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@3"></script>
-    <title>NFT Cats Магазин</title>
+    <title>NFT Cats Профиль</title>
 </head>
 <body>
 <header>
     <div class="header_center center">
         <a class="header_logo" href="index.html">NFT Cats</a>
         <form class="header_search">
-            <input class="header_input" type="text" name="search" placeholder="Поиск" required="">
+            <label>
+                <input class="header_input" type="text" name="search" placeholder="Поиск" required="">
+            </label>
         </form>
         <a class="button button-small header_upload" href="#">Загрузить</a>
         <a class="button button-small button-stroke" href="login.html">Войти</a>
     </div>
 </header>
-<div class="main center">
-    <div class="catalog_sorting">
-        <div class="catalog_select">*Сначала новые/старые*</div>
-        <div class="catalog_nav">
-            <a class="catalog_link active" href="#">Все</a>
-            <a class="catalog_link" href="#">Пушистые</a>
-            <a class="catalog_link" href="#">Задумчивые</a>
-            <a class="catalog_link" href="#">Агрессивные</a>
-            <a class="catalog_link" href="#">Добрые</a>
-        </div>
-    </div>
+<div class="center">
     <div class="catalog_row">
-        <div class="catalog_filters">
-            <div>Фильтр 1</div>
-            <div>Фильтр 2</div>
-            <div>Фильтр 3</div>
+        <div class="person_block">
+            <div class="avatar margin_LR"></div>
+            <div class="nick margin_LR">Noname</div>
+            <div class="short_line margin_LR"></div>
+            <div class="profile_description margin_LR">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
+                metus varius, porta felis ut, pulvinar leo. Suspendisse aliquam dui non tellus porttitor egestas.
+            </div>
+            <a class="button button-small button-stroke btn_wallet margin_LR" href="#">Подключить кошелёк</a>
         </div>
-        <div class="catalog_wrapper">
-            <div class="catalog_list">
+        <div class="profile_catalog_wrapper">
+            <div class="profile_catalog_list">
                 <div class="card">
                     <div class="card_preview">
                         <img src="img/cat1.jpg">
@@ -110,6 +106,5 @@
         </div>
     </div>
 </div>
-<script src="vue/store.js"></script>
 </body>
 </html>

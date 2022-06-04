@@ -263,18 +263,17 @@ form {
 .card {
     display: flex;
     flex-direction: column;
-    /*flex: 0 0 30%;
-    max-width: 30%;*/
     width: 265px;
     padding: 12px;
-    box-shadow: 0 0 32px rgb(31 47 70 / 10%);
+    border: 1px solid #E6E8EC;
+    box-shadow: 0 0 32px rgb(31 47 70 / 5%);
     border-radius: 20px;
     margin: 10px;
     transition: 0.1s linear;
 }
 
 .card:hover {
-    box-shadow: 0 5px 32px rgb(31 47 70 / 15%);
+    box-shadow: 0 5px 32px rgb(31 47 70 / 7%);
     transform: translateY(-2px);
 }
 
@@ -326,4 +325,63 @@ form {
     font-weight: 700;
     text-transform: uppercase;
     color: #45B26B;
+}
+
+.person_block {
+    width: 300px;
+    height: 550px;
+    background-color: #FCFCFD;
+    border-radius: 20px;
+    margin-top: 50px;
+    border: 1px solid #E6E8EC;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 32px rgb(31 47 70 / 5%);
+    padding: 30px;
+}
+
+.margin_LR {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: #3772FF;
+}
+
+.nick {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.short_line {
+    height: 2px;
+    width: 70%;
+    background-color: #E6E8EC;
+    margin-top: 10px;
+}
+
+.profile_description {
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.btn_wallet {
+    margin-top: auto;
+}
+
+.profile_catalog_wrapper {
+    flex-grow: 1;
+    margin-top: 50px;
+}
+
+.profile_catalog_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -10px 20px 0;
 }
