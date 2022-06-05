@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>NFT Cats Товар</title>
+    <title>NFT Cats | Товар</title>
 </head>
 <body>
 <header>
@@ -19,24 +19,78 @@
     </div>
 </header>
 
-<div class="center">
-    <div class="item_block">
+<div class="center flex_column page">
+    <div class="block item_block">
         <div class="item_picture">
             <img src="img/cat1.jpg">
         </div>
         <div class="item_column margin_LR">
             <div class="item_name margin_LR">Item Name</div>
+            <a class="flex_row" href="profile.html">
+                <div class="avatar_mini"></div>
+                <div class="nick_mini">Noname</div>
+            </a>
             <div class="item_description margin_LR">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
                 sagittis porttitor hendrerit. In vitae neque accumsan eros interdum accumsan. Donec vel sollicitudin
                 diam, vitae placerat erat. Donec tempus ligula justo, non volutpat neque varius eget.
             </div>
-            <div class="item_buttons margin_LR">
+            <div class="margin_T margin_LR">
                 <div class="item_price margin_LR">
                     <div class="margin_LR">1.69 ETH</div>
                 </div>
                 <a class="button button-stroke shine" href="?">Купить</a>
             </div>
         </div>
+    </div>
+    <div class="flex_column margin_LR">
+        <div class="other_items_title margin_LR">Другие товары</div>
+        <div class="item_catalog_wrapper">
+            <div class="catalog_list">
+                <a class="card" href="item.html">
+                    <div class="card_preview">
+                        <img src="img/cat3.jpg">
+                    </div>
+                    <div class="card_link">
+                        <div class="flex_column">
+                            <div class="card_line">
+                                <div class="card_title">ЫааАа</div>
+                                <div class="card_price">1.69 ETH</div>
+                            </div>
+                        </div>
+                        <div class="card_foot"></div>
+                    </div>
+                </a>
+                <a class="card" href="item.html">
+                    <div class="card_preview">
+                        <img src="img/cat4.jpg">
+                    </div>
+                    <div class="card_link">
+                        <div class="flex_column">
+                            <div class="card_line">
+                                <div class="card_title">хыхху</div>
+                                <div class="card_price">1.69 ETH</div>
+                            </div>
+                        </div>
+                        <div class="card_foot"></div>
+                    </div>
+                </a>
+                <a class="card" href="item.html">
+                    <div class="card_preview">
+                        <img src="img/cat5.jpg">
+                    </div>
+                    <div class="card_link">
+                        <div class="flex_column">
+                            <div class="card_line">
+                                <div class="card_title">hehe</div>
+                                <div class="card_price">1.69 ETH</div>
+                            </div>
+                        </div>
+                        <div class="card_foot"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <a class="button button-stroke margin_LR all_items_btn" href="store.html">Больше товаров</a>
     </div>
 </div>
 </body>

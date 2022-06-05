@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/vue@3"></script>
-    <title>NFT Cats Регистрация</title>
+    <title>NFT Cats | Регистрация</title>
 </head>
 <body>
 <header>
@@ -19,11 +18,11 @@
         <a class="button button-small button-stroke" href="login.html">Войти</a>
     </div>
 </header>
-<div class="main center center_center">
-    <input class="login_input" type="text" name="login" placeholder="Логин" required="">
-    <input class="login_input" type="email" name="email" placeholder="Почта" required="">
-    <input class="login_input" type="password" name="password" placeholder="Пароль" required="">
-    <input class="login_input" type="password" name="password" placeholder="Повтор пароля" required="">
+<div class="center center_center page">
+    <input class="login_input" type="text" name="login" placeholder="Логин" required="" maxlength="15">
+    <input class="login_input" type="email" name="email" placeholder="Почта" required="" maxlength="40">
+    <input class="login_input" type="password" name="password" placeholder="Пароль" required="" maxlength="20">
+    <input class="login_input" type="password" name="password" placeholder="Повтор пароля" required="" maxlength="20">
     <a class="other_auth" href="login.html">Уже зарегестрированы?</a>
     <a class="button button-stroke" href="store.html">Зарегистрироваться</a>
 </div>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>NFT Cats | Настройки</title>
+</head>
+<body>
+<header>
+    <div class="header_center center">
+        <a class="header_logo" href="index.html">NFT Cats</a>
+        <form class="header_search">
+            <label>
+                <input class="header_input" type="text" name="search" placeholder="Поиск" required="">
+            </label>
+        </form>
+        <a class="button button-small header_upload" href="#">Загрузить</a>
+        <a class="button button-small button-stroke" href="login.html">Войти</a>
+    </div>
+</header>
+
+<div class="center page">
+    <div class="flex_row">
+        <div class="block personality_block flex_column">
+            <div class="s_title margin_LR">Профиль</div>
+            <div class="rename flex_row">
+                <div class="s_text s_name">Имя:</div>
+                <input class="rename_input" type="text" name="nickname" placeholder="Имя" value="Noname" required=""
+                       maxlength="15">
+            </div>
+            <div class="biog s_text">Расскажите о себе:</div>
+            <textarea class="bio_area" placeholder="Био" maxlength="300"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut metus varius, porta felis ut, pulvinar leo. Suspendisse aliquam dui non tellus porttitor egestas.</textarea>
+            <a class="button button-stroke button-small margin_T margin_LR" href="?save">Сохранить изменения</a>
+        </div>
+        <div class="block wallet_block flex_column">
+            <div class="s_title margin_LR">Кошелёк</div>
+        </div>
+    </div>
+    <div class="flex">
+        <a class="button back_to_profile margin_LR" href="profile.html">Вернуться к профилю</a>
+    </div>
+</div>
+
+
+</body>
+</html>
