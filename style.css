@@ -385,3 +385,56 @@ form {
     justify-content: center;
     margin: -10px 20px 0;
 }
+
+.item_block {
+    height: 500px;
+    width: auto;
+    background-color: #FCFCFD;
+    border-radius: 20px;
+    margin-top: 50px;
+    border: 1px solid #E6E8EC;
+    display: flex;
+    box-shadow: 0 0 32px rgb(31 47 70 / 5%);
+    padding: 30px;
+}
+
+.item_picture > img {
+    width: 440px;
+    height: 440px;
+    border-radius: 16px;
+}
+
+.item_column {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.item_name {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.item_description {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.item_buttons {
+    /*display: flex;
+    flex-direction: row;*/
+    margin-top: auto;
+}
+
+.item_price {
+    padding: 0 10px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 2px #45b26b;
+    font-size: 15px;
+    line-height: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 85px;
+    color: #45B26B;
+    margin-bottom: 10px;
+}
