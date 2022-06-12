@@ -115,7 +115,7 @@ header {
     transform: translate3d(200%, 0, 0) rotate(35deg);
 }
 
-.header_upload {
+.header_button {
     margin-right: 12px;
 }
 
@@ -125,9 +125,9 @@ form {
 
 .header_search {
     position: relative;
-    flex-shrink: 0;
     width: 256px;
     margin-right: 24px;
+    margin-left: 24px;
 }
 
 .header_input {
@@ -144,6 +144,7 @@ form {
 
 .login_input {
     width: 60%;
+    min-width: 300px;
     height: 60px;
     padding: 0 16px 0 16px;
     background: none;
@@ -214,12 +215,12 @@ form {
 .catalog_sorting {
     display: flex;
     align-items: center;
-    margin-bottom: 48px;
+    margin-bottom: 30px;
 }
 
 .store_title {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 23px;
 }
 
 .catalog_nav {
@@ -262,7 +263,6 @@ form {
 
 .catalog_wrapper {
     flex-grow: 1;
-    padding-left: 32px;
 }
 
 .catalog_list {
@@ -348,10 +348,21 @@ form {
     margin-top: auto;
 }
 
+.mt10 {
+    margin-top: 10px;
+}
+
 .avatar {
     width: 100px;
     height: 100px;
     border-radius: 50px;
+    background-color: #3772FF;
+}
+
+.avatar_big {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
     background-color: #3772FF;
 }
 
@@ -424,6 +435,7 @@ form {
     width: 85px;
     color: #45B26B;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .flex_row {
@@ -458,7 +470,7 @@ form {
 .other_items_title {
     font-size: 25px;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 40px;
     color: black;
 }
 
@@ -482,17 +494,12 @@ form {
 }
 
 .personality_block {
-    width: 550px;
+    width: 70%;
     min-width: 300px;
     min-height: 600px;
 }
 
-.rename {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.rename_input {
+.settings_input {
     width: 100%;
     height: 40px;
     padding: 0 10px 0 10px;
@@ -521,18 +528,110 @@ form {
     background: none;
     border: 2px solid #E6E8EC;
     border-radius: 8px;
-    width: 470px;
+    width: 100%;
     height: 200px;
-}
-
-.wallet_block {
-    margin-left: 50px;
-    width: 550px;
-    min-width: 300px;
-    min-height: 600px;
+    resize: none;
 }
 
 .back_to_profile {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
+.settings_left {
+    width: 50%;
+    margin-right: 10px;
+}
+
+.settings_right {
+    width: 50%;
+    margin-left: 10px;
+}
+
+.change_avatar {
+    max-width: 200px;
+    margin-top: 10px;
+}
+
+@media (max-width: 940px) {
+    .item_block {
+        flex-direction: column;
+    }
+    .item_picture {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .item_picture > img {
+        width: 100%;
+        height: unset;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .item_column {
+        margin: 0;
+    }
+    .settings_left {
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
+    }
+    .settings_right {
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
+    }
+    .in_column {
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
+    .catalog_sorting {
+        flex-direction: column;
+    }
+    .store_title {
+        margin-bottom: 10px;
+    }
+    .catalog_nav {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .header_input {
+        height: 0;
+        width: 0;
+        display: none;
+        margin: 0;
+    }
+    .center {
+        padding: 0 20px;
+    }
+    .catalog_sorting {
+        flex-direction: column;
+    }
+    .catalog_nav {
+        flex-direction: column;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 10px;
+    }
+    .catalog_link {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .profile_catalog {
+        flex-direction: column;
+    }
+    .person_block {
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 10px;
+    }
+    .profile_catalog_list {
+        margin: 0;
+    }
+    .personality_block {
+        width: 90%;
+    }
+}
