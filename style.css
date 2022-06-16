@@ -25,9 +25,28 @@ header {
     border-bottom: 1px solid #E6E8EC;
 }
 
+footer {
+    position: relative;
+    z-index: 20;
+    margin-top: 30px;
+    padding: 20px 0;
+    border-top: 1px solid #E6E8EC;
+}
+
 .header_center {
     display: flex;
     align-items: center;
+}
+
+.footer_center {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_text {
+    color: #777E90;
+    font-size: 16px;
+    margin-bottom: 3px;
 }
 
 .center {
@@ -177,6 +196,7 @@ form {
 
 .page {
     margin-top: 50px;
+    min-height: 70vh;
 }
 
 .block {
@@ -385,7 +405,7 @@ form {
 }
 
 .profile_catalog_wrapper {
-    /*flex-grow: 1;*/
+
 }
 
 .profile_catalog_list {
@@ -550,6 +570,11 @@ form {
 .change_avatar {
     max-width: 200px;
     margin-top: 10px;
+}
+
+.pages_btn {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 @media (max-width: 940px) {
