@@ -2,8 +2,8 @@ from xml.dom import ValidationErr
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from models import User
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from models import User, NFT
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, FloatField
 from wtforms.validators import DataRequired, Email, EqualTo, Length
 
 class RegisterForm(FlaskForm):
@@ -71,3 +71,21 @@ class UpdateAccountForm(FlaskForm):
             current_email = User.query.filter_by(email = email.data).first()
             if current_email:
                 raise ValidationErr('That email is taken. Please choose a different one.')
+
+
+class NftForm(FlaskForm):
+    picture = FileField(validators = [FileAllowed(['jpg', 'png'])])
+    
+    name = StringField(validators = [DataRequired()], render_kw = {"placeholder":"Name NFT"})
+
+    description = StringField(validators = [DataRequired()], render_kw = {"placeholder":"Information about NFT"})
+
+    price = FloatField(validators = [DataRequired()])
+
+    submit = SubmitField("Create")
+
+
+    def validate_name(self,name):
+        name = NFT.query.filter_by(name = name.data).first()
+        if name:
+            raise ValidationErr('NFT with this name has already been created, please come up with a new name')

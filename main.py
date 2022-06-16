@@ -1,9 +1,9 @@
 from flask import flash, redirect, render_template, request, url_for
 from flask_login import login_user, current_user, logout_user, login_required
-from models import User
+from models import User, NFT
 import secrets
 import os
-from forms import LoginForm, RegisterForm, UpdateAccountForm
+from forms import LoginForm, RegisterForm, UpdateAccountForm, NftForm
 from App import app, db, login_manager
 
 
@@ -53,20 +53,22 @@ def register():
 
 @app.route("/shop")
 def shop():
-    return render_template('store.html')
+    page = request.args.get('page', 1, type = int)
+    nfts = NFT.query.paginate(page = page, per_page = 40)
+    return render_template('store.html', nfts = nfts)
 
 
 @app.route("/logout")
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('home'))
 
 
 def save_picture(form_picture):
     random_hex = secrets.token_hex(8)
     _, file_ext = os.path.splitext(form_picture.filename)
     picture_fn = random_hex + file_ext
-    picture_path = os.path.join(app.root_path, 'static', picture_fn)
+    picture_path = os.path.join(app.root_path, 'static/img', picture_fn)
     form_picture.save(picture_path)
 
     return picture_fn
@@ -92,8 +94,30 @@ def account():
         form.email.data = current_user.email
         form.name.data = current_user.name
         form.general_information.data = current_user.general_information
-    image_file = url_for('static', filename = '' + current_user.image_file )
+    image_file = url_for('static', filename = 'img/' + current_user.image_file )
     return render_template('settings.html', title = 'Account', image_file = image_file, form_account = form)
+
+
+@app.route("/nft/new", methods = ['POST', 'GET'])
+@login_required
+def new_nft():
+    form = NftForm()
+    if form.validate_on_submit():
+        nft = NFT(image_file = form.picture.data, name = form.name.data,description = form.description.data,
+        price = form.price.data, creator = current_user, owner = current_user)
+        db.session.add(nft)
+        db.session.commit()
+        return redirect(url_for('shop'))
+    return render_template('create_nft.html', title = 'New NFT', form_nft = form)
+
+
+
+@app.route("/nft/<int:nft_id>")
+@login_required
+def nft(nft_id):
+    nft = NFT.query.get_or_404(nft_id)
+    return render_template('nft.html', title = nft.name, nft = nft)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
