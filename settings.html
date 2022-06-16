@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>NFT Cats | Настройки</title>
+</head>
+<body>
+<header>
+    <div class="header_center center">
+        <a class="header_logo" href="{{url_for('home')}}">NFT Cats</a>
+        <form class="header_search">
+            <label>
+                <input class="header_input" type="text" name="search" placeholder="Поиск" required="">
+            </label>
+        </form>
+        <a class="button button-small header_upload" href="#">Загрузить</a>
+        <a class="button button-small button-stroke" href="{{url_for('login')}}">Войти</a>
+    </div>
+</header>
+<div class="content-section">
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ image_file }}" alt="default imgage">
+            <div class="center page">
+                <form method="POST" action="">
+                    {{form_account.hidden_tag()}}
+                    {{form_account.email}}
+                    {{form_account.username}}
+                    {{form_account.name}}
+                    {{form_account.general_information}}
+                    {{form_account.picture}}
+                    {{form_account.submit}}
+                </form>
+            <div class="flex">
+        <a class="button back_to_profile margin_LR" href="{{url_for('account')}}">Вернуться к профилю</a>
+    </div>
+</div>
+</body>
+</html>

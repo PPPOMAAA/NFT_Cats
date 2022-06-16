@@ -20,12 +20,12 @@
 </header>
 <div class="center center_center page">
     <form method="Post" action="">
-        {{form_reg.hidden_tag()}}
-        {{form_reg.email}}
-        {{form_reg.username}}
-        {{form_reg.password}}
-        {{form_reg.confirm}}
-        {{form_reg.submit}}
+        {{form_nft.hidden_tag()}}
+        {{form_nft.picture}}
+        {{form_nft.name}}
+        {{form_nft.description}}
+        {{form_nft.price}}
+        {{form_nft.submit}}
     </form>
     <a class="other_auth" href="{{url_for('login')}}">Уже зарегестрированы?</a>
     <a class="button button-stroke" href="{{url_for('shop')}}">Зарегистрироваться</a>

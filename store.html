@@ -1,10 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/vue@3"></script>
-    <title>NFT Cats</title>
+    <title>NFT Cats | Магазин</title>
 </head>
 <body>
 <header>
@@ -13,103 +12,59 @@
         <form class="header_search">
             <input class="header_input" type="text" name="search" placeholder="Поиск" required="">
         </form>
-        <a class="button button-small header_upload" href="#">Загрузить</a>
-        <a class="button button-small button-stroke" href="login.html">Войти</a>
+        <a class="button button-small header_upload" href="{{url_for('new_nft')}}">Загрузить</a>
+        <a class="button button-small button-stroke" href="{{url_for('login')}}">Войти</a>
     </div>
 </header>
-<div class="main center">
+<div class="center page">
     <div class="catalog_sorting">
-        <div class="catalog_select">*Сначала новые/старые*</div>
+        <div class="store_title">Магазин с котиками</div>
+        <!--<div class="catalog_select">*Сначала новые/старые*</div>-->
         <div class="catalog_nav">
             <a class="catalog_link active" href="#">Все</a>
             <a class="catalog_link" href="#">Пушистые</a>
             <a class="catalog_link" href="#">Задумчивые</a>
             <a class="catalog_link" href="#">Агрессивные</a>
             <a class="catalog_link" href="#">Добрые</a>
+            <a class="catalog_kink activate" href="{{ url_for('logout')}}">Logout</a>
         </div>
     </div>
     <div class="catalog_row">
-        <div class="catalog_filters">
+        <!--<div class="catalog_filters">
             <div>Фильтр 1</div>
             <div>Фильтр 2</div>
             <div>Фильтр 3</div>
-        </div>
-        <div class="catalog_wrapper">
-            <div class="catalog_list">
-                <div class="card">
-                    <div class="card_preview">
-                        <img src="img/cat1.jpg">
-                    </div>
-                    <a class="card_link" href="#">
-                        <div class="card_body">
-                            <div class="card_line">
-                                <div class="card_title">Кот завис</div>
-                                <div class="card_price">1.69 ETH</div>
-                            </div>
-                        </div>
-                        <div class="card_foot"></div>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="card_preview">
-                        <img src="img/cat2.jpg">
-                    </div>
-                    <a class="card_link" href="#">
-                        <div class="card_body">
-                            <div class="card_line">
-                                <div class="card_title">Испугався</div>
-                                <div class="card_price">1.69 ETH</div>
-                            </div>
-                        </div>
-                        <div class="card_foot"></div>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="card_preview">
-                        <img src="img/cat3.jpg">
-                    </div>
-                    <a class="card_link" href="#">
-                        <div class="card_body">
-                            <div class="card_line">
-                                <div class="card_title">ЫааАа</div>
-                                <div class="card_price">1.69 ETH</div>
-                            </div>
-                        </div>
-                        <div class="card_foot"></div>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="card_preview">
-                        <img src="img/cat4.jpg">
-                    </div>
-                    <a class="card_link" href="#">
-                        <div class="card_body">
-                            <div class="card_line">
-                                <div class="card_title">хыхху</div>
-                                <div class="card_price">1.69 ETH</div>
-                            </div>
-                        </div>
-                        <div class="card_foot"></div>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="card_preview">
-                        <img src="img/cat5.jpg">
-                    </div>
-                    <a class="card_link" href="#">
-                        <div class="card_body">
-                            <div class="card_line">
-                                <div class="card_title">hehe</div>
-                                <div class="card_price">1.69 ETH</div>
-                            </div>
-                        </div>
-                        <div class="card_foot"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
+        </div>-->
     </div>
+    {% for nft in nfts.items %} <!-- не правильно обрабатывает for-->
+        <article class="media content-secion">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2" href="#">
+                        {{nft.creator.username}}
+                    </a>
+                    <a class="mr-3" href="#">
+                        {{nft.owner.username}}
+                    </a>
+                </div>
+                <img class="rounded-circle account-img" src="{{ url_for('static', filename = 'img/' + nft.creator.image_file) }}">
+                <h2><a class="article-title" href="{{ url_for('nft', nft_id = nft.id) }}">{{nft.name}}</a></h2>
+                <small class="text-price"> {{ nft.price}}</small>
+            </div>
+        </article>
+    {% endfor %}
+    {% for page_num in nfts.iter_pages(left_edge=1,right_edge=1,left_current=1, right_current=2) %}
+        {% if page_num %}
+            {% if nfts.page == page_num %}
+                <a class="btn btn-infro mb-4" href="{{ url_for('shop', page = page_num) }}">{{ page_num }}</a>
+            {% else %}
+                <a class="btn btn-outline-infro mb-4" href="{{ url_for('shop', page = page_num) }}">{{ page_num }}</a>
+            {% endif %}
+        {% else %}
+            ....
+        {% endif %}
+    {% endfor %}
 </div>
-<script src="vue/store.js"></script>
+</div>
 </body>
 </html>

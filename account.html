@@ -15,20 +15,18 @@
             </label>
         </form>
         <a class="button button-small header_upload" href="#">Загрузить</a>
-        <a class="button button-small button-stroke" href="{{url_for('login')}}">Войти</a>
     </div>
 </header>
+<img class="rounded-circle account-img" src="{{ image_file }}">
 <div class="center center_center page">
     <form method="Post" action="">
-        {{form_reg.hidden_tag()}}
-        {{form_reg.email}}
-        {{form_reg.username}}
-        {{form_reg.password}}
-        {{form_reg.confirm}}
-        {{form_reg.submit}}
+        {{form_account.hidden_tag()}}
+        {{form_account.email}}
+        {{form_account.username}}
+        {{form_account.name}}
+        {{form_account.general_information}}
+        {{form_account.submit}}
     </form>
-    <a class="other_auth" href="{{url_for('login')}}">Уже зарегестрированы?</a>
-    <a class="button button-stroke" href="{{url_for('shop')}}">Зарегистрироваться</a>
 </div>
 </body>
 </html>
