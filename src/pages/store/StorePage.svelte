@@ -5,11 +5,15 @@
 </script>
 
 
-<Welcome/>
-<BestProduct/>
-<ProductList/>
+<div class="container">
+    <Welcome/>
+    <BestProduct/>
+    <ProductList/>
+</div>
 
 
 <style>
-    
+    .container {
+        margin-bottom: 200px;
+    }
 </style>
