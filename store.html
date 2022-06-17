@@ -40,7 +40,7 @@
         <article class="media content-secion">
             <div class="media-body">
                 <div class="article-metadata">
-                    <a class="mr-2" href="#">
+                    <a class="mr-2" href="{{ url_for('user_accounts', username = nft.creator.username ) }}">
                         {{nft.creator.username}}
                     </a>
                     <a class="mr-3" href="#">

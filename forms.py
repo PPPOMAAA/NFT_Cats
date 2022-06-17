@@ -89,3 +89,25 @@ class NftForm(FlaskForm):
         name = NFT.query.filter_by(name = name.data).first()
         if name:
             raise ValidationErr('NFT with this name has already been created, please come up with a new name')
+
+
+class RequestResetForm(FlaskForm):
+    email = StringField(validators=[DataRequired(), Email()], render_kw = {"placeholder":"Email"})
+
+    submit = SubmitField("Request Password Reset")
+
+
+    def validate_name(self,email):
+        user = User.query.filter_by(email = email.data).first()
+        if user is None:
+            raise ValidationErr('There is no account with that email. You must register first')
+
+
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField(validators=[DataRequired(), Length(
+        min = 8)], render_kw={"placeholder":"Password"})
+
+    confirm = PasswordField(validators=[DataRequired(),EqualTo('password',
+        message='Passwords do not match, please try again'),Length(min = 8)], render_kw = {"placeholder":"Confirm Password"})
+
+    submit = SubmitField("Reset Password")

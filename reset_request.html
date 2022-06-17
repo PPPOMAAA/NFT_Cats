@@ -16,17 +16,13 @@
         </form>
         <a class="button button-small header_upload" href="#">Загрузить</a>
         <a class="button button-small button-stroke" href="{{url_for('login')}}">Войти</a>
-        <a class="button button-small header_upload" href="{{url_for('reset_request')}}">Забыли пароль?</a>
     </div>
 </header>
 <div class="center center_center page">
     <form method="Post" action="">
-        {{form_login.hidden_tag()}}
-        {{form_login.email}}
-        {{form_login.username}}
-        {{form_login.password}}
-        {{form_login.remember}}
-        {{form_login.submit}}
+        {{form_reset_request.hidden_tag()}}
+        {{form_reset_request.email}}
+        {{form_reset_request.submit}}
     </form>
     <a class="other_auth" href="{{url_for('login')}}">Уже зарегестрированы?</a>
     <a class="button button-stroke" href="{{url_for('register')}}">Зарегистрироваться</a>

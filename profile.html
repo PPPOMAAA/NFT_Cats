@@ -3,106 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>NFT Cats | Профиль</title>
+    <title>NFT Cats | Настройки</title>
 </head>
 <body>
 <header>
     <div class="header_center center">
-        <a class="header_logo" href="index.html">NFT Cats</a>
+        <a class="header_logo" href="{{url_for('home')}}">NFT Cats</a>
         <form class="header_search">
             <label>
                 <input class="header_input" type="text" name="search" placeholder="Поиск" required="">
             </label>
         </form>
         <a class="button button-small header_upload" href="#">Загрузить</a>
-        <a class="button button-small button-stroke" href="login.html">Войти</a>
+        <a class="button button-small button-stroke" href="{{url_for('login')}}">Войти</a>
     </div>
 </header>
-<div class="center page">
-    <div class="catalog_row">
-        <div class="block person_block">
-            <div class="avatar margin_LR"></div>
-            <div class="nick margin_LR">Noname</div>
-            <div class="short_line margin_LR"></div>
-            <div class="profile_bio margin_LR">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-                metus varius, porta felis ut, pulvinar leo. Suspendisse aliquam dui non tellus porttitor egestas.
-            </div>
-            <a class="button button-small button-stroke margin_T margin_LR" href="settings.html">Настройки</a>
-        </div>
-        <div class="profile_catalog_wrapper">
-            <div class="profile_catalog_list">
-                <a class="card" href="item.html">
-                    <div class="card_preview">
-                        <img src="img/cat1.jpg">
-                    </div>
-                    <div class="card_link">
-                        <div class="flex_column">
-                            <div class="card_line">
-                                <div class="card_title">Кот завис</div>
-                                <div class="card_price">1.69 ETH</div>
-                            </div>
+<div class="content-section">
+    <h1 class="mb-3">
+        Accounts by {{ user.username }}
+    </h1>
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ image_file }}" alt="default imgage">
+            <div class="center page">
+                <article class="media content-secion">
+                    <div class="media-body">
+                        <div class="article-metadata">
+                            <a class="mr-2" href="#">
+                                {{user.username}}
+                            </a>
                         </div>
-                        <div class="card_foot"></div>
+                        <h2><a class="article-title" href="{{ url_for('user_accounts', username = user.username )}}">{{user.name}}</a></h2>
+                        <small class="text-price"> {{ user.email}}</small>
+                        <a class="article-title" href='#'>{{user.general_information}}</a>
+                        <img class="rounded-circle account-img" src="{{ url_for('static', filename = 'img/' + user.image_file) }}">
                     </div>
-                </a>
-                <a class="card" href="item.html">
-                    <div class="card_preview">
-                        <img src="img/cat2.jpg">
-                    </div>
-                    <div class="card_link">
-                        <div class="flex_column">
-                            <div class="card_line">
-                                <div class="card_title">Испугався</div>
-                                <div class="card_price">1.69 ETH</div>
-                            </div>
-                        </div>
-                        <div class="card_foot"></div>
-                    </div>
-                </a>
-                <a class="card" href="item.html">
-                    <div class="card_preview">
-                        <img src="img/cat3.jpg">
-                    </div>
-                    <div class="card_link">
-                        <div class="flex_column">
-                            <div class="card_line">
-                                <div class="card_title">ЫааАа</div>
-                                <div class="card_price">1.69 ETH</div>
-                            </div>
-                        </div>
-                        <div class="card_foot"></div>
-                    </div>
-                </a>
-                <a class="card" href="item.html">
-                    <div class="card_preview">
-                        <img src="img/cat4.jpg">
-                    </div>
-                    <div class="card_link">
-                        <div class="flex_column">
-                            <div class="card_line">
-                                <div class="card_title">хыхху</div>
-                                <div class="card_price">1.69 ETH</div>
-                            </div>
-                        </div>
-                        <div class="card_foot"></div>
-                    </div>
-                </a>
-                <a class="card" href="item.html">
-                    <div class="card_preview">
-                        <img src="img/cat5.jpg">
-                    </div>
-                    <div class="card_link">
-                        <div class="flex_column">
-                            <div class="card_line">
-                                <div class="card_title">hehe</div>
-                                <div class="card_price">1.69 ETH</div>
-                            </div>
-                        </div>
-                        <div class="card_foot"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
+                </article>
+            <div class="flex">
+        <a class="button back_to_profile margin_LR" href="{{url_for('account')}}">Вернуться к профилю</a>
     </div>
 </div>
 </body>
